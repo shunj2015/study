@@ -8,7 +8,7 @@ object SqlSchemaSepc {
     StructField("segments", ArrayType(IntegerType))
   ))
 
-  def segSum(s: Array[Int]): Int= {
+  def segSum(s: Seq[Int]): Int= {
     var c:Int = 0
     s.foreach(c += _)
     c
