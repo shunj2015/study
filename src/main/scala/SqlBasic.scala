@@ -22,7 +22,7 @@ object SqlBasic {
 
     println("--------global view---------")
     df.createGlobalTempView("gpeople")
-    spark.sql("select * from global_temp.gpeople")
-    spark.newSession().sql("select * from global_temp.gpeople")
+    spark.sql("select * from global_temp.gpeople").show()
+    spark.newSession().sql("select * from global_temp.gpeople").show()
   }
 }
