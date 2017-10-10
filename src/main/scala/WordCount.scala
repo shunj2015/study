@@ -8,7 +8,9 @@ object WordCount {
         val counts = distFile
           .flatMap(line => line.split(" "))
           .map(word=>(word,1)).reduceByKey((a,b)=>a+b)
-        System.out.println(counts.collect())
+        counts.collect().foreach(println)
+        println("-------------")
+        println(counts.collect().mkString)
         counts.saveAsTextFile("/home/shunj/xad/study/resources/wordCount/output")
     }
 }
