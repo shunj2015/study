@@ -4,7 +4,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 object SqlSchemaRefl {
   case class SegmentPair(name:String, segs:Array[Long])
   def segmentSum(s: Seq[Long]): Long ={
-    var c = 0
+    var c:Long = 0
     s.foreach(c += _)
     c
   }
