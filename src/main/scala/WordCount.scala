@@ -12,5 +12,6 @@ object WordCount {
         println("-------------")
         println(counts.collect().mkString)
         counts.saveAsTextFile("/home/shunj/xad/study/resources/wordCount/output")
+        counts.saveAsSequenceFile("/home/shunj/xad/study/resources/wordCount/outputSeq")
     }
 }

@@ -1,5 +1,6 @@
 import org.apache.spark.sql.SparkSession
 object SqlBasic {
+  case class Person(name:String, age:Long)
   def main(args:Array[String]): Unit = {
     val spark = SparkSession
       .builder()
@@ -29,9 +30,8 @@ object SqlBasic {
 
     println("---------datasets--------")
 
-    case class Person(name:String, age:Long)
 
-    val ds = Seq(Person("jim", "18")).toDS()
+    val ds = Seq(Person("jim", 18)).toDS()
     ds.show()
     val ds2 = Seq(1,2,3).toDS().map(_+1).collect()
 
