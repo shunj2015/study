@@ -16,8 +16,13 @@ object SqlBasic {
     df.filter($"age">20).show()
 
 
-    println("-------------------")
+    println("-------temp view----------")
     df.createOrReplaceTempView("people")
     spark.sql("select * from people").show()
+
+    println("--------global view---------")
+    df.createGlobalTempView("gpeople")
+    spark.sql("select * from global_temp.gpeople")
+    spark.newSession().sql("select * from global_temp.gpeople")
   }
 }
