@@ -21,7 +21,7 @@ object SqlSchemaRefl {
     df.createOrReplaceTempView("segment")
 
 
-    spark.sql("select name, segmentSum(segs) from segment").show()
+    spark.sql("select name, ssum(segs) from segment").show()
   }
 
 }
