@@ -14,5 +14,10 @@ object SqlBasic {
     df.select("name").show()
     df.select("name", "age").show()
     df.filter($"age">20).show()
+
+
+    println("-------------------")
+    df.createOrReplaceTempView("people")
+    spark.sql("select * from people").show()
   }
 }
