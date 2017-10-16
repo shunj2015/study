@@ -11,6 +11,9 @@ object SqlAdvance {
 
     spark.read.parquet("/home/shunj/xad/study/111.parquet").show()
 
+    val peopleDF = spark.read.json("/usr/local/spark/examples/src/main/resources/people.json")
+    peopleDF.write.bucketBy(42, "name").sortBy("age").saveAsTable("people_111")
+
   }
 }
 
